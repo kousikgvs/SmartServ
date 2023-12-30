@@ -22,7 +22,7 @@ function LoginForm() {
     <section>
       <div className="signin">
         <div className="content">
-          <img src={"https://cdn.technologyadvice.com/wp-content/uploads/2020/09/sslogo.png"} height={50}/>
+          <img src={"https://github.com/kousikgvs/SmartServ/blob/main/task3/src/Images/smartservlogo.png"} height={50}/>
           <form onSubmit={handleSubmit}>
             
             <div className="form">
