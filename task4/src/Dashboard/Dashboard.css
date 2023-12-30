@@ -1,0 +1,66 @@
+.company-card{
+    height: 100px;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    border-left: 15px solid green;
+    background-color: aliceblue;
+    margin: 10px;
+}
+
+.companymetrics{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.company-value, .company-title{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.company-heading{
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.col2{
+    width: 50%;
+}
+
+.col1-heading , .col2-heading{
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.graph-cards{
+    background-color: aliceblue;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1818px) {
+    .row2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .company-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
