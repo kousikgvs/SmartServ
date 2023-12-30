@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
 function LoginForm() {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -34,12 +35,19 @@ function LoginForm() {
     const isValidPassword = /^(?=.*[A-Z])(?=.*\d)(?!.*[^A-Za-z0-9@]).{6,}$/.test(password);
 
     if (isValidUsername && isValidPassword) {
+
+      if (password === "SmartServTest@123") {
       toast.success(`Username: ${username}`);
       toast.success(`Password: ${password}`);
       toast.success("Successfully Logged IN");
+      }
+      else {
+        toast.error('Incorrect password.');
+      }
+
     } else {
-      if (!isValidPassword) {
-        toast.error('Invalid password.');
+if (!isValidUsername) {
+        toast.error('Invalid email.');
         return;
       }
       if (!isValidPassword) {
@@ -48,6 +56,13 @@ function LoginForm() {
       }
     }
   };
+  
+    const handleForget = () => {
+        const email = 'support@smartserv.io';
+        const subject = 'Password Reset Request';
+        const body = 'Hello, I have forgotten my password and would like to reset it. Thank you.';
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
 
   return (
     <section>
@@ -88,7 +103,7 @@ function LoginForm() {
               </div>
 
               <div className="links">
-                <a>Forgot Password ?</a>
+                <a onClick={handleForget}>Forgot Password ?</a>
               </div>
             </div>
           </form>

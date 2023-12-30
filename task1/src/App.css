@@ -1,0 +1,45 @@
+/* App.css */
+
+/* Gradient background color */
+body {
+  background: linear-gradient(to bottom, #2980b9, #3498db); /* Adjust colors as needed */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Previous button color */
+button:nth-of-type(1),
+button:nth-last-of-type(1) {
+  background-color: #e74c3c; /* Red color for Previous and Next buttons */
+}
+
+/* All buttons with the same color */
+button {
+  background-color: #3498db; /* Blue color for all buttons */
+  color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+/* Alternate table row color */
+tbody tr:nth-child(even) {
+  background-color: #ecf0f1; /* Light gray for alternate rows */
+}
+
+/* Column header color */
+th {
+  background-color: #2c3e50; /* Dark blue for column headers */
+  color: #fff;
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+/* Row header color */
+td:first-child {
+  background-color: #2c3e50; /* Dark blue for row headers */
+  color: #fff;
+  border: 1px solid #000;
+  padding: 8px;
+}

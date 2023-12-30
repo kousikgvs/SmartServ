@@ -3,8 +3,8 @@ import "../Dashboard/Dashboard.css"
 const MetricsCard = ({ value , Title}) => {
   return (
       <div className='company-card'>
-            <p className='company-value'>{value}</p>
-            <p className='company-title'>{ Title }</p>
+        <p className='company-value'>{value}</p>
+        <p className='company-title'>{ Title }</p>
       </div>
   )
 }
