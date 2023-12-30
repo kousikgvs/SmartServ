@@ -26,14 +26,14 @@
     width: 300px;
 }
 
-input {
+.input {
     padding: 10px;
     border-radius: 5px;
     font-size: 15px;
     width: 90%;
 }
 
-button{
+.submitbtn{
     padding: 10px;
     border-radius: 5px;
     font-size: 15px;
