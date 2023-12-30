@@ -4,6 +4,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(10);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     fetch('https://s3.amazonaws.com/open-to-cors/assignment.json')
@@ -21,6 +22,7 @@ function App() {
 
         const sortedByPopularity = productList.sort((a, b) => b.popularity - a.popularity);
         setProducts(sortedByPopularity);
+                setLoading(false);
       });
   }, []);
 
@@ -40,7 +42,8 @@ function App() {
   return (
     <div>
       <h1>Product List</h1>
-      <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+      {loading ? <div className='loader'></div> :
+        <table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
           <tr>
             <th style={{ border: '1px solid #000', padding: '8px' }}>Subcategory</th>
@@ -59,7 +62,8 @@ function App() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>}
+
        <div style={{ marginTop: '10px' }}>
         {currentPage > 1 && (
           <button
