@@ -6,6 +6,7 @@ import './style.css';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleUsernameChange = (e) => {
     const enteredUsername = e.target.value;
@@ -23,28 +24,28 @@ function LoginForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
-    // Check if username and password are valid
+  const handleSubmit = (e) => {
+    e.preventDefault()
     const isValidUsername = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username);
     const isValidPassword = /^(?=.*[A-Z])(?=.*\d)(?!.*[^A-Za-z0-9@]).{6,}$/.test(password);
-
-    if (username === "") {
-      toast.error('Please Enter Username');
-      return;
-    }
-    
-    if (password === "") {
-      toast.error('Please Enter Password');
-      return;
-    }
-
 
     if (isValidUsername && isValidPassword) {
       toast.success(`Username: ${username}`);
       toast.success(`Password: ${password}`);
+      toast.success("Successfully Logged IN");
     } else {
-      toast.error('Invalid username or password.');
+      if (!isValidPassword) {
+        toast.error('Invalid password.');
+        return;
+      }
+      if (!isValidPassword) {
+        toast.error('Invalid password.');
+        return;
+      }
     }
   };
 
@@ -67,16 +68,23 @@ function LoginForm() {
 
               <div className="inputBox">
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   placeholder='Password'
                   className='input'
                   onChange={handlePasswordChange}
                   required
                 />
+                <button
+                  type="button"
+                  className='togglePassword'
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? 'Hide' : 'Show'}
+                </button>
               </div>
 
               <div className="inputBox">
-                <button type="submit" className='submitbtn'  value="Login" onClick={handleSubmit}>Login</button>
+                <button type="submit" className='submitbtn' value="Login">Login</button>
               </div>
 
               <div className="links">

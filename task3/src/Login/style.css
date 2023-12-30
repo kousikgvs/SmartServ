@@ -44,6 +44,11 @@
 
 .inputBox{
     width: 100%;
+    display: flex;
+}
+
+.togglePassword{
+    border-radius: 2px;
 }
 
 .links{
