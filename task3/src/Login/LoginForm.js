@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './style.css';
-import Picture1 from "./Images/Picture1.png"
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -23,37 +22,41 @@ function LoginForm() {
     <section>
       <div className="signin">
         <div className="content">
-          <img src={Picture1} />
-          <h2>Sign In</h2>
+          <img src={"https://cdn.technologyadvice.com/wp-content/uploads/2020/09/sslogo.png"} height={50}/>
           <form onSubmit={handleSubmit}>
+            
             <div className="form">
               <div className="inputBox">
                 <input
                   type="text"
                   value={username}
+                  placeholder='Username'
                   onChange={handleUsernameChange}
                   required
                 />
-                <i>Username</i>
               </div>
+
               <div className="inputBox">
                 <input
                   type="password"
                   value={password}
+                  placeholder='Password'
                   onChange={handlePasswordChange}
                   required
                 />
-                <i>Password</i>
               </div>
-              <div className="links">
-                <a href="#">Forgot Password</a>
-                <a href="#">Signup</a>
-              </div>
+
               <div className="inputBox">
-                <input type="submit" value="Login" />
+                <button type="submit" value="Login">Login</button>
               </div>
+
+              <div className="links">
+                <a>Forgot Password ?</a>
+              </div>
+
             </div>
           </form>
+          
         </div>
       </div>
     </section>
